@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap');
+
+
+$base-font:'Raleway', sans-serif;
+
+
+$base-color: #555;
+// $primary : #411b99;
+// $secondary: #a305a8;
+
+$primary: #88bfe8;
+$secondary: #39d7b2;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+
+
+body{
+    font-family: $base-font;
+    color: $base-color;
+}
+
+
+$darkThemeBg: #111;
+$topbarHeight : 55px;
+$panelBodyColor:#fff;
+
+$sidebarWidth: 250px;
+$sidebarWidthMini: 80px;

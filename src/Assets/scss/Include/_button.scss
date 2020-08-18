@@ -1,0 +1,55 @@
+
+@mixin btnColor($name,$color) {
+    &.btn-#{$name}{
+        background-color: $color;
+    }
+}
+
+
+@mixin btnColorAtn($name,$color) {
+    &.ant-btn-#{$name}{
+        background-color: $color;
+        border: 1px solid $color;
+        color: #fff;
+        &:hover,&:active,&:focus{
+            background-color: darken($color,7);
+            border: 1px solid darken($color,7);
+            color: #fff;
+        }
+    }
+}
+@mixin btnColorAtnOutline($name,$color) {
+    &.ant-btn-outline-#{$name}{
+        background-color: transparent;
+        border: 1px solid $color;
+        color: $color;
+        &:hover,&:active,&:focus{
+            background-color: $color;
+            border: 1px solid $color;
+            color: #fff;
+        }
+    }
+}
+
+
+
+.btn{
+  @include btnColor('primary',$primary);
+  &.btn-circle{
+      border-radius: 50%;
+  }
+}
+
+
+.ant-btn{
+    @include btnColorAtn('primary',$primary);
+    @include btnColorAtn('secondary',$secondary);
+    @include btnColorAtn('info',$info);
+    @include btnColorAtn('warning',$warning);
+    @include btnColorAtn('danger',$danger);
+    @include btnColorAtnOutline('primary',$primary);
+    @include btnColorAtnOutline('secondary',$secondary);
+    @include btnColorAtnOutline('warning',$warning);
+    @include btnColorAtnOutline('info',$info);
+    @include btnColorAtnOutline('danger',$danger);
+}

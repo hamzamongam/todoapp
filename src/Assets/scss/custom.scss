@@ -1,0 +1,184 @@
+
+.todo-layout{
+position: relative;
+width: 100%;
+min-height: 100vh;
+padding-bottom: 100px;
+.toolbar{
+    padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+   
+   h2{
+    margin: 0;
+    color:#666;
+   }
+   span{
+       position: absolute;
+       left: 15px;
+       top: 50%;
+       transform: translateY(-50%);
+       font-size: 29px;
+       color: $primary;
+   }
+}
+
+.todo-container{
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    .todo-item{
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 50px;
+        box-shadow: 1px 1px 25px -5px rgb(216, 216, 216);
+        padding: 17px 20px;
+        &:not(:last-of-type){
+            margin-bottom: 15px;
+        }
+        h3{
+            margin: 0;
+            font-size: 17px;
+            color: #888;
+            font-weight: 400;
+            line-height: 1;
+        }
+        .todo-content{
+            width: calc(100% - 25px);
+        }
+        .todo-icon{
+            width: 25px;
+            height: 25px;
+            box-shadow: 1px 1px 20px #ddd;
+            border-radius: 50%;
+            text-align: center;
+            span{
+                display: none;
+            }
+
+        }
+        &.is-completed{
+            .todo-icon{
+                background-color: $secondary;
+                span{
+                    display: block;
+                    color: #fff;
+                    font-size: 16px;
+                    line-height: 25px;
+                }
+            }
+            h3{
+                text-decoration: line-through;
+                color: #ccc;
+            }   
+        }
+    }
+}
+
+
+.todo-float-icon-container{
+    width: 100%;
+    height: 120px;
+    background-image: linear-gradient(transparent,#fff ,#fff );
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .todo-float-icon{
+        display: block;
+        height: 70px;
+        width: 70px;
+        background-color: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 1px 1px 20px #ccc;
+        transition: all .5s ease;
+        &:hover,&:focus{
+            background-color: darken($primary, 16);
+        }
+        span{
+            font-size: 30px;
+            color: #fff;
+        }
+    
+    }
+}
+
+}
+
+
+.popup-mask{
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.432);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .popup-dialog{
+        overflow: hidden;
+        background-color: #fff;
+        width:450px;
+        border-radius: 10px;
+        position: relative;
+        @media screen and (min-width:45px) {
+            width: calc(100% - 20px);
+        }
+        .close-btn{
+            cursor: pointer;
+            right: 10px;
+            top: 10px;
+            position: absolute;
+            font-size: 20px;
+        }
+        .popup-haader{
+            background-color: rgb(235, 235, 235);
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            h2{
+                font-size: 20px;
+                margin: 0;
+
+            }
+        }
+        .popup-content{
+         
+            padding: 20px;
+            padding-top: 15px;
+        }
+    }
+}
+
+.loader{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+        font-size: 40px;
+        color: $primary;
+    }
+}
+
+.add-form{
+    label{
+        margin-bottom: 5px;
+        line-height: 1;
+        text-transform: capitalize;
+    }
+}
